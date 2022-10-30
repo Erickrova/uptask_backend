@@ -1,7 +1,6 @@
 import express from "express"
 import dotenv from "dotenv"
 import conectarDB from "./config/db.js"
-import "colors"
 import usuarioRoutes from "./routes/usuarioRoutes.js"
 import proyectosRoutes from "./routes/proyectoRoutes.js"
 import tareasRoutes from "./routes/tareasRoutes.js"
@@ -39,7 +38,7 @@ const PORT = process.env.PORT || 4000
 
 
 const servidor = app.listen(PORT,()=>{
-    console.log("server on port ",`http://localhost:${PORT}`.green)
+    console.log("server on port ",`http://localhost:${PORT}`)
 })
 
 // socket io
