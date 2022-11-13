@@ -9,9 +9,9 @@ const router = express.Router()
 
 router.post("/",registrar); // ? CREA UN NUEVO USUARIO
 router.post("/login",autenticar); // ? AUTENTICAR UN USUARIO
-router.post("/olvide-password",olvidePassword); // ? RECUPERAR CONTRASEÑA DE UN USUARIO
-router.route("/olvide-password/:token").post(nuevoPassword).get(comprobarToken) // ? RECUPERAR CONTRASEÑA DE UN USUARIO
-router.get("/confirmar/:token",confirmar); // ? CONFIRMAR UN USUARIO
+// router.post("/olvide-password",olvidePassword); // ? RECUPERAR CONTRASEÑA DE UN USUARIO
+// router.route("/olvide-password/:token").post(nuevoPassword).get(comprobarToken) // ? RECUPERAR CONTRASEÑA DE UN USUARIO
+// router.get("/confirmar/:token",confirmar); // ? CONFIRMAR UN USUARIO
 
 router.get("/perfil",checkAuth,perfil)
 
