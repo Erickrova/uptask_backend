@@ -26,7 +26,7 @@ const registrar = async (req,res)=>{
         })
 
 
-        return res.json({msg: "Usuario Creado Correctamente, Revisa tu email para confirmar tu cuenta"})
+        return res.json({msg: "Usuario Creado Correctamente,Ya puedes iniciar sesion"})
     } catch (error) {
         console.log(error)
     }
