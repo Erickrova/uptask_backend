@@ -1,5 +1,5 @@
 import express  from "express";
-import { registrar,autenticar,confirmar, olvidePassword,comprobarToken,nuevoPassword,perfil
+import { registrar,autenticar, olvidePassword,comprobarToken,nuevoPassword,perfil
  } from "../controllers/usuarioController.js";
 import checkAuth from "../middleware/checkAuth.js";
 
