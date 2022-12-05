@@ -37,46 +37,46 @@ app.use("/api/tareas",tareasRoutes)
 const PORT = process.env.PORT || 4000
 
 
-const servidor = app.listen(PORT,()=>{
+app.listen(PORT,()=>{
     console.log("server on port ",`http://localhost:${PORT}`)
 })
 
-// socket io
-import {Server} from "socket.io"
+// // socket io
+// import {Server} from "socket.io"
 
-const io = new Server(servidor,{
-    pingTimeout:60000,
-    cors:{
-        origin: process.env.FRONTEND_URL,    
-    }
-})
+// const io = new Server(servidor,{
+//     pingTimeout:60000,
+//     cors:{
+//         origin: process.env.FRONTEND_URL,    
+//     }
+// })
 
-io.on("connection", socket => {
-    console.log("conectado a socket.io")
+// io.on("connection", socket => {
+//     console.log("conectado a socket.io")
 
-    // definir los eventos de socket io
-  socket.on("abrir proyecto",(proyecto)=>{
-    socket.join(proyecto)
-  })
+//     // definir los eventos de socket io
+//   socket.on("abrir proyecto",(proyecto)=>{
+//     socket.join(proyecto)
+//   })
 
-  socket.on("nueva tarea",data =>{
-    socket.to(data.proyecto).emit("tarea agregada",data)
-  })
+//   socket.on("nueva tarea",data =>{
+//     socket.to(data.proyecto).emit("tarea agregada",data)
+//   })
 
-  socket.on("eliminar tarea",data =>{
-    socket.to(data.proyecto).emit("tarea eliminada",data)
-  })
+//   socket.on("eliminar tarea",data =>{
+//     socket.to(data.proyecto).emit("tarea eliminada",data)
+//   })
 
-  socket.on("editar tarea",data =>{
-    const proyecto = data.proyecto._id
-    socket.to(proyecto).emit("tarea editada",data)
-  })
-  socket.on("completar tarea",data =>{
-    console.log(data)
-    const proyecto = data.proyecto._id
-    socket.to(proyecto).emit("tarea completada",data)
-  })
+//   socket.on("editar tarea",data =>{
+//     const proyecto = data.proyecto._id
+//     socket.to(proyecto).emit("tarea editada",data)
+//   })
+//   socket.on("completar tarea",data =>{
+//     console.log(data)
+//     const proyecto = data.proyecto._id
+//     socket.to(proyecto).emit("tarea completada",data)
+//   })
 
 
-})
+// })
 
